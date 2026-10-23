@@ -1,1 +1,44 @@
+# Diário de Bordo — Uso de Inteligência Artificial
 
+**Disciplina:** Teoria dos Grafos — Lista 2  
+**Conteúdo:** Noções de grafos — Parte 2: Conceitos básicos  
+**Turma:** 3º Período — 2026/2  
+**Professor:** Prof. Newarney T. Costa  
+**Dupla:** Messias Junio da Silva Mendes e Bruno Alves Mendonça de Abreu Filho  
+**Chat utilizado:** Gemini / GitHub Copilot
+
+## Entrada 1 — 18/08/2026, às 07h
+
+**Questão(ões):** Questões da Lista 2, conforme o andamento da resolução.
+
+**Onde travamos / objetivo da conversa:**  
+Utilizamos a inteligência artificial como recurso de consulta durante o desenvolvimento da lista, principalmente para esclarecer conceitos de Teoria dos Grafos e compreender melhor os enunciados das questões.
+
+**O que perguntamos ao tutor (resumo):**  
+Fizemos consultas relacionadas aos conceitos apresentados na atividade, buscando explicações que auxiliassem na compreensão dos problemas e das possíveis formas de resolução.
+
+**O que o tutor respondeu ou perguntou (resumo):**  
+A ferramenta apresentou explicações sobre os assuntos consultados e sugestões de procedimentos que poderiam ser utilizados na resolução das questões.
+
+**O que fizemos com isso (aceitamos? questionamos? corrigimos?):**  
+Utilizamos as respostas como material de apoio para analisar os problemas. As informações fornecidas pela ferramenta não foram consideradas, por si só, garantia de que uma resposta estivesse correta.
+
+**A IA tentou dar a resposta pronta ou errou? Como percebemos e reagimos?**  
+A utilização da ferramenta exigiu atenção para diferenciar explicações conceituais de respostas que poderiam ser utilizadas diretamente na atividade. Por isso, o conteúdo apresentado deveria ser analisado de acordo com o enunciado e as definições estudadas na disciplina.
+
+**O que aprendemos:**  
+A inteligência artificial pode auxiliar na compreensão de conceitos e na organização do raciocínio, mas seu uso não substitui a interpretação dos enunciados nem a compreensão dos procedimentos matemáticos envolvidos.
+
+## Reflexão final
+
+**Onde a IA mais ajudou:**  
+A ferramenta pode contribuir para esclarecer dúvidas, apresentar explicações alternativas e auxiliar na compreensão dos conceitos de Teoria dos Grafos.
+
+**Onde ela atrapalhou ou tentou entregar a resposta pronta:**  
+Respostas muito completas podem dificultar a identificação das etapas do raciocínio quando são consultadas sem uma análise própria. Por isso, é importante utilizar as explicações como apoio, e não apenas reproduzir os resultados apresentados.
+
+**Onde ela errou e como verificamos:**  
+Não registramos um erro específico sem que ele tenha sido identificado durante a atividade. De maneira geral, respostas geradas por IA precisam ser confrontadas com os enunciados, as definições adotadas pelo professor e os procedimentos matemáticos aplicáveis.
+
+**O que faríamos diferente na próxima lista:**  
+Na próxima atividade, podemos registrar as dúvidas durante a resolução, consultar a IA nos pontos em que houver dificuldade e anotar como cada explicação contribuiu para o entendimento do problema. Isso permitirá documentar com mais clareza o uso da ferramenta e a participação da dupla no processo de aprendizagem.
