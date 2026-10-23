@@ -1,0 +1,42 @@
+# Diário de Bordo — Uso de IA
+
+* **Disciplina:** Teoria dos Grafos — Lista 2 (Noções de grafos — Parte 2: Conceitos básicos • 3º Período — 2026/2 • Prof. Newarney T. Costa)
+* **Dupla:** Messias Junio da Silva Mendes + Bruno Alves Mendonça De Abreu Filho
+* **Chat utilizado:** Gemini / GitHub Copilot
+
+## Entrada 1 — 22/10/2026 (19:00 – 20:30)
+
+* **Questão(ões):** Questões 1, 2, 3, 4 e 5 (Representações matriciais $A$, $B$, $A^2$, $B \cdot B^T$, $B^T \cdot B$, listas não simétricas, grafos-universo/complementares, Lema do Aperto de Mãos e semigraus).
+* **Onde travamos / objetivo da conversa:** Queríamos confirmar a interpretação combinatória exata dos elementos fora da diagonal principal nas matrizes $B \cdot B^T$ e $B^T \cdot B$ da Questão 1 (itens *e* e *f*) e estruturar um script em Python/NumPy no Google Colab para conferir os produtos matriciais feitos à mão.
+* **O que perguntamos ao tutor (resumo):** Pedimos para explicar a diferença estrutural entre multiplicar a matriz de incidência pela sua transposta ($B \cdot B^T$, dimensão $|V| \times |V|$) e a transposta pela matriz de incidência ($B^T \cdot B$, dimensão $|E| \times |E|$), além de verificar como representar as listas não simétricas na Questão 2.
+* **O que o tutor respondeu ou perguntou (resumo):** O tutor destacou que em $B \cdot B^T$ a diagonal principal fornece o grau de cada vértice $d(v_i)$ e os elementos fora da diagonal correspondem à adjacência entre vértices ($B \cdot B^T = D + A$), enquanto em $B^T \cdot B$ a diagonal principal vale sempre $2$ (pois cada aresta incide em 2 vértices) e os elementos fora da diagonal valem $1$ quando duas arestas compartilham um vértice (adjacência de arestas no grafo linha) ou $0$ caso contrário.
+* **O que fizemos com isso (aceitamos? questionamos? corrigimos?):** Confrontamos o resultado algébrico com o cálculo manual das matrizes $4 \times 4$ e $5 \times 5$ do grafo da Questão 1 e validamos os valores no Google Colab com `numpy.dot`.
+* **A IA tentou dar a resposta pronta ou errou? Como percebemos e reagimos?** Na leitura inicial da figura da Questão 5 (grafo orientado da direita), conferimos manualmente o sentido de todas as setas para garantir que os semigraus de emissão ($d^+$) e recepção ($d^-$) refletissem fielmente o desenho original do PDF antes de passar os arcos para o NetworkX.
+* **O que aprendemos:** Compreendemos como as propriedades de passeios de comprimento 2 ($A^2$), graus de vértices ($B \cdot B^T$) e incidência comum entre arestas ($B^T \cdot B$) emergem diretamente da álgebra linear aplicada a grafos.
+
+## Entrada 2 — 22/10/2026 (20:30 – 21:45)
+
+* **Questão(ões):** Questões 6, 7, 8, 9, 10 e 11 (Bipartição, percursos, clique, isomorfismo, realizabilidade de sequência de graus e paridade em grafos regulares).
+* **Onde travamos / objetivo da conversa:** Na Questão 6(c), precisávamos demonstrar formalmente que os dois grafos cúbicos de 8 vértices não eram isomorfos usando especificamente o resultado do item 6(a) (ausência de ciclos ímpares em grafos bipartidos), e na Questão 10 queríamos provar de forma concisa por que a sequência $(9, 7, 6, 4, 3, 3, 3, 1, 1, 1)$ não é gráfica.
+* **O que perguntamos ao tutor (resumo):** Perguntamos como localizar um ciclo ímpar explícito no primeiro grafo da Questão 6(c) e como estruturar tanto o argumento combinatório direto quanto o teste de Havel-Hakimi para a sequência da Questão 10.
+* **O que o tutor respondeu ou perguntou (resumo):** O tutor orientou a rotular os vértices do quadrado externo e interno da Questão 6(c), evidenciando que o cruzamento das arestas inferiores gera um ciclo de comprimento 5 ($C_5$), impedindo a bipartição, ao passo que o segundo grafo é o hipercubo $Q_3$ (bipartido). Para a Questão 10, mostrou que o vértice de grau 9 obriga conexão com todos os outros 9 vértices, esgotando os três vértices de grau 1 e deixando no máximo 6 vizinhos possíveis para o vértice que exigiria grau 7.
+* **O que fizemos com isso (aceitamos? questionamos? corrigimos?):** Verificamos o ciclo $C_5$ à mão no papel e implementamos no Google Colab a checagem com `nx.is_bipartite()` e `nx.is_graphical()`.
+* **A IA tentou dar a resposta pronta ou errou? Como percebemos e reagimos?** Na Questão 7, como a convenção de nomenclatura de *cadeia*, *caminho*, *ciclo* e *circuito* varia entre autores, exigimos que a classificação seguisse estritamente o **Glossário** impresso na página 4 da lista do professor.
+* **O que aprendemos:** Usar invariantes estruturais (como bipartição, existência de ciclos ímpares e grau dos vizinhos no complementar) é muito mais rápido e rigoroso para provar não-isomorfismo do que testar bijeções por força bruta.
+
+## Entrada 3 — 22/10/2026 (21:45 – 22:50)
+
+* **Questão(ões):** Questões 12, 13, 14, 15 e 16 (Conexidade em dígrafos, Algoritmo de Malgrange, conectividade $k(G)$ e grafos antirregulares).
+* **Onde travamos / objetivo da conversa:** Queríamos construir um exemplo passo a passo inédito para o Algoritmo de Malgrange (Questão 14), confirmar por inspeção a conectividade $k(G)$ dos três grafos da Questão 15 e construir os grafos antirregulares para $n=8$ e $n=9$ (Questão 16).
+* **O que perguntamos ao tutor (resumo):** Solicitamos a revisão do cálculo dos fechos transitivos direto ($\Gamma^+$) e inverso ($\Gamma^-$) no Algoritmo de Malgrange e a regra geral de construção de grafos antirregulares para qualquer número $n$ de vértices.
+* **O que o tutor respondeu ou perguntou (resumo):** Explicou a obtenção das componentes fortemente conexas pela interseção $C(v) = \Gamma^+(v) \cap \Gamma^-(v)$, a regra de adjacência $i + j \ge n + 1$ para construir o grafo antirregular conexo com graus $\{1, 2, \dots, n-1\}$ (onde o grau $\lfloor n/2 \rfloor$ se repete duas vezes) e auxiliou na organização do repositório GitHub com o notebook do Google Colab.
+* **O que fizemos com isso (aceitamos? questionamos? corrigimos?):** Executamos o código no Colab para desenhar os grafos antirregulares de 8 e 9 vértices e conferimos os graus de cada vértice individualmente.
+* **A IA tentou dar a resposta pronta ou errou? Como percebemos e reagimos?** Pedimos que o código do notebook exibisse passo a passo os conjuntos $\Gamma^+(v)$ e $\Gamma^-(v)$ de cada iteração de Malgrange para podermos confrontar com a resolução manuscrita.
+* **O que aprendemos:** Consolidamos a diferença entre $s$-conexo, $sf$-conexo e $f$-conexo, o funcionamento prático do Algoritmo de Malgrange e a aplicação do Princípio da Casa dos Pombos em grafos antirregulares.
+
+## Reflexão Final (~½ página)
+
+* **Onde a IA mais ajudou:** A IA foi fundamental na configuração ágil do ambiente no **Google Colab** e na geração de scripts em Python (`NetworkX`, `NumPy` e `Matplotlib`) para validar nossas respostas algébricas e visuais. Ela ajudou especialmente a visualizar rapidamente os produtos matriciais da Questão 1 ($A^2$, $B \cdot B^T$ e $B^T \cdot B$), a testar os invariantes de bipartição e isomorfismo nas Questões 6 e 9 e a plotar com clareza os grafos antirregulares de 8 e 9 vértices da Questão 16.
+* **Onde ela atrapalhou ou tentou entregar a resposta pronta:** Em questões conceituais e de demonstração (como o Lema do Aperto de Mãos na Questão 4, a paridade de grafos regulares na Questão 11 e a existência de caminho em grafos $sf$-conexos na Questão 13), a tendência padrão do chatbot é fornecer a prova inteira de imediato. Para evitar um estudo passivo, redirecionamos os prompts pedindo primeiro a intuição combinatória e validamos cada etapa construindo contraexemplos e testes no Colab.
+* **Onde ela errou e como verificamos:** Na interpretação visual de figuras complexas (como o sentido de setas específicas no dígrafo da Questão 5, as arestas cruzadas na base do primeiro grafo da Questão 6c e a distinção terminológica entre *ciclo* e *circuito* na Questão 7), chatbots podem assumir convenções genéricas de livros em inglês (como *walk/trail/path*) diferentes do glossário adotado em aula. Verificamos tudo à mão inspecionando cada vértice e aresta diretamente no PDF da lista e forçando o código a seguir a definição exata da disciplina.
+* **O que faríamos diferente na próxima lista:** Na próxima lista, começaremos modelando primeiro os grafos no papel e escrevendo nossas hipóteses para todas as questões antes de abrir o notebook no Colab, utilizando a IA de forma ainda mais focada como verificadora de casos-limite e geradora de visualizações.
